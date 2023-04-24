@@ -1,0 +1,48 @@
+* {
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #d9ecfa;
+}
+
+.wrapper {
+    width: 70vmin;
+    height: 70vmin;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #293447;
+    border-radius: 3%;
+}
+
+.score-table {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px;
+}
+
+.play-board {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background-color: #1d232d;
+    grid-template:repeat(30, 1fr)/repeat(30, 1fr);
+
+}
+
+.play-board.food {
+    background-color: #ff003d;
+}
+.play-board.head{
+    background-color: #60cbff;
+}
