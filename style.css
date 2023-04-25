@@ -1,6 +1,10 @@
-* {
-    font-family: 'Kanit', sans-serif;
-    font-family: 'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -20,6 +24,7 @@ body {
     justify-content: center;
     background-color: #293447;
     border-radius: 3%;
+    box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
 }
 
 .score-table {
@@ -40,9 +45,9 @@ body {
 
 }
 
-.play-board.food {
-    background-color: #ff003d;
+.play-board .food {
+    background: #ff003d;
 }
-.play-board.head{
-    background-color: #60cbff;
+.play-board .head{
+    background: #60cbff;
 }

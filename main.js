@@ -1,6 +1,8 @@
 const playBoard = document.querySelector(".play-board");
 const scoreElem = document.querySelector(".curr-score");
 const highScoreElem = document.querySelector(".max-score");
+const controls = document.querySelectorAll(".controls i");
+
 
 let gameOver = false;
 let foodX, foodY;
@@ -43,6 +45,7 @@ const changeDirection = e => {
     }
 }
 
+
 const initGame = () => {
     if (gameOver) {
         return alertGameOver();
@@ -56,7 +59,7 @@ const initGame = () => {
 
         localStorage.setItem("max-score", highScore);
         scoreElem.innerText = `Score: ${score}`;
-        highScoreElem.innerText = `Max score:${highScore}`;
+        highScoreElem.innerText = `Max score: ${highScore}`;
     }
     snakeX += velocityX;
     snakeY += velocityY;
@@ -71,7 +74,7 @@ const initGame = () => {
     for (let i = 0; i < snakeBody.length; i++) {
         html += `<div class="head" style="grid-area: ${snakeBody[i][1]}/${snakeBody[i][0]}"></div>`;
 
-        if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[i][0]) {
+        if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
             gameOver = true;
         }
     }
@@ -79,5 +82,5 @@ const initGame = () => {
 }
 
 updateFoodPosition();
-setIntervalId = setInterval(initGame(), 100);
-document.addEventListener("keyup", changeDirection());
+setIntervalId = setInterval(initGame, 100);
+document.addEventListener("keyup", changeDirection);
