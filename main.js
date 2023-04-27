@@ -11,6 +11,7 @@ let velocityX = 0, velocityY = 0;
 let setIntervalId;
 let snakeBody = [];
 let score = 0;
+let delay = 100;
 
 let highScore = localStorage.getItem("max-score") || 0;
 highScoreElem.innerText = `Max score: ${highScore}`;
@@ -82,5 +83,6 @@ const initGame = () => {
 }
 
 updateFoodPosition();
-setIntervalId = setInterval(initGame, 100);
+setIntervalId = setInterval(initGame, delay);
+
 document.addEventListener("keyup", changeDirection);
